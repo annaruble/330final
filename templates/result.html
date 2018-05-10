@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+<p> Here are countries from {{countries[0]['continent']}}:</p>
+<table class="table table-hover">
+    {% for country in countries  %}
+    <tr>
+        <td> {{country[0]}} </td>
+        <td> {{country[1]}} </td>
+        <td> {{country[2]}} </td>
+        <td> {{country[3]}} </td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <form action = "/processform">
+        <label>Which Continent would you like the countries of</label>
+        <select type="text" id="continent" name="continent">
+                {% for continent in continents  %}
+                <option value={{continent['continent']}}>{{continent['continent']}}</option>
+                {% endfor %}
+        </select>
+        <input type="submit">
+    </form>
+
+{% endblock %}
