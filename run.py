@@ -21,18 +21,7 @@ def procform():
     res = db.query('select * from release_date where country = :country and year = :year limit 10', country = countryx, year =yearx)
 
     return render_template('result.html', movress=res)
-    db2 = records.Database('sqlite:///mydb.db')
-    res = db.query('select distinct continent from country')
 
-    return render_template('index.html', continents=res)
-
-@app.route('/processform')
-def procform():
-    continentx = request.args.get("continent")
-    db = records.Database('postgresql://schuna05:@knuth.luther.edu/world')
-    res = db.query('select * from country where continent = :continent limit 10', continent = continentx)
-
-    return render_template('result.html', countries=res)
 
 
 if __name__ == '__main__':
