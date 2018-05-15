@@ -2,7 +2,7 @@
 
 {% block content %}
     <form action = "/processform">
-        <label>Which Continent would you like the countries of</label>
+        <label>Search for movies from a specified country:</label>
         <select type="text" id="country" name="country">
                 {% for country in countries  %}
                 <option value="{{country['country']}}">{{country['country']}}</option>
