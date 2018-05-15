@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+<p> Here are actors from {{actors[0][1]}}:</p>
+<table class="table table-hover">
+    {% for actor in actors  %}
+    <tr>
+        <td> {{actor[2]}} </td>
+        <td> {{actor[3]}} </td>
+        <td> {{actor[4]}} </td>
+        <td> {{actor[5]}} </td>
+        <td> {{actor[6]}} </td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}
