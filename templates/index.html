@@ -8,16 +8,16 @@
                 <option value={{country['country']}}>{{country['country']}}</option>
                 {% endfor %}
         </select>
-        <select type="text" id="month" name="month">
-            {% for month in months  %}
-            <option value={{month['month']}}>{{month['month']}}</option>
-            {% endfor %}
-        </select>
         <select type="text" id="year" name="year">
             {% for year in years  %}
             <option value={{year['year']}}>{{year['year']}}</option>
             {% endfor %}
         </select> 
+        <select type="text" id="month" name="month">
+            {% for month in months  %}
+            <option value={{months[month]}}>{{months[month]}}</option>
+            {% endfor %}
+        </select>
         <input type="submit">
     </form>
 

@@ -1,13 +1,13 @@
 {% extends "base.html" %}
 {% block content %}
-<p> Here are countries from {{countries[0]['continent']}}:</p>
+<p> Here are countries from :</p>
 <table class="table table-hover">
-    {% for country in countries  %}
+    {% for movres in movress  %}
     <tr>
-        <td> {{country[0]}} </td>
-        <td> {{country[1]}} </td>
-        <td> {{country[2]}} </td>
-        <td> {{country[3]}} </td>
+        <td><a href=#> {{movres[0]}} </a></td>
+        <td> {{movres[1]}} </td>
+        <td> {{movres[2]}} </td>
+        <td> {{movres[5]}} </td>
     </tr>
     {% endfor %}
 </table>
