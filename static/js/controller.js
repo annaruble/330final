@@ -1,18 +1,21 @@
-let titleIn = document.getElementById("titleInput")
+// let titleIn = document.getElementById("titleInput")
+/* let titleIn = actors[0][1]
 let yearIn = document.getElementById("yearInput")
 
 titleIn.addEventListener("keyup", function(event) {
     if (event.keyCode === 13) {
         document.getElementById("enter").click();
     }
-})
+}) */
 
-function search() {
+function search(realTitle, realYear) {
     let config = {};
 
-    let title = document.getElementById("titleInput").value;
+    // let title = document.getElementById("titleInput").value;
+    let title = realTitle
+    console.log(title)
     let pTitle = title.replace(/ /g, "+")
-    let year = document.getElementById("yearInput").value;
+    let year = realYear
 
     fetch(`https://www.omdbapi.com/?i=tt3896198&apikey=72961f58&t=${pTitle}&type=movie&y=${year}&plot=full`)
     .then(function(response) {
