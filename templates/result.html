@@ -4,10 +4,9 @@
 <table class="table table-hover">
     {% for movres in movress  %}
     <tr>
-        <td id="{{movres[0]}}"><a href='/rendermovie?movie={{movres[0]}}' onclick='search("{{movres[0]}}", {{movres[1]}})'> {{movres[0]}} </a></td>
-        <td> {{movres[1]}} </td>
+        <td id="{{movres[1]}}"><a href='/rendermovie?movie={{movres[1]}}'> {{movres[1]}} </a></td>
         <td> {{movres[2]}} </td>
-        <td> {{movres[5]}} </td>
+        <td> {{movres[3]}} </td>
     </tr>
     {% endfor %}
 </table>

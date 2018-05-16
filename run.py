@@ -25,9 +25,9 @@ def procform():
     elif monthx == "None":
         res = db.query('select * from release_date where country = :country and year = :year', country = countryx, year =yearx)
     elif yearx == "None":
-        res = db.query('select * from release_date where country = :country and month = :month', country = countryx, month = res3[monthx])
+        res = db.query('select * from release_date where country = :country and day = :month', country = countryx, month = res3[monthx])
     else:
-        res = db.query('select * from release_date where country = :country and year = :year and month = :month', country = countryx, year =yearx, month = res3[monthx])
+        res = db.query('select * from release_date where country = :country and year = :year and day = :month', country = countryx, year =yearx, month = res3[monthx])
 
     return render_template('result.html', movress=res)
 
@@ -35,7 +35,7 @@ def procform():
 def getMovieInfo():
     moviex = request.args.get("movie")
     #x = len(moviex)
-    db = records.Database('postgresql://schuna05:@knuth.luther.edu/movies')
+    db = records.Database('sqlite:///mydb2.db')
     res = db.query('select * from moviecast where title = :movie order by n', movie = moviex)
 
 
