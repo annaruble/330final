@@ -34,9 +34,8 @@ def procform():
 @app.route('/rendermovie')
 def getMovieInfo():
     moviex = request.args.get("movie")
-    #x = len(moviex)
     db = records.Database('sqlite:///mydb2.db')
-    res = db.query('select * from moviecast where title = :movie order by n', movie = moviex)
+    res = db.query('select distinct * from moviecast where title = :movie order by n', movie = moviex)
 
 
     return render_template('movie.html',actors = res)

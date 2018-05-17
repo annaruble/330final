@@ -1,50 +1,56 @@
 {% extends "base.html" %}
+
 {% block content %}
-<div class="container-fluid">
-    <div id="info">
-        <h3 id="titleYr"></h3>
-        <h6 id="actorsDir"></h6>
-        <p id="plot"></p>
+    <div class="container-fluid">
+        <div id="info">
+            <h3 id="titleYr"></h3>
+            <h6 id="actorsDir"></h6>
+            <p id="plot"></p>
 
-        <table class="table">
-            <tr>
-                <th>Rating</th>
-                <th>Runtime</th>
-                <th>Genre</th>
-                <th>Tomatometer Score</th>
-                <th>Metascore</th>
-            </tr>
-            <tr>
-                <td id="rating"></td>
-                <td id="runtime"></td>
-                <td id="genre"></td>
-                <td id="Tscore"></td>
-                <td id="Mscore"></td>
-            </tr>
-        </table>
+            <table class="table">
+                <tr>
+                    <th>Rating</th>
+                    <th>Runtime</th>
+                    <th>Genre</th>
+                    <th>Tomatometer Score</th>
+                    <th>Metascore</th>
+                </tr>
+                <tr>
+                    <td id="rating"></td>
+                    <td id="runtime"></td>
+                    <td id="genre"></td>
+                    <td id="Tscore"></td>
+                    <td id="Mscore"></td>
+                </tr>
+            </table>
+        </div>
 
-
+        <div id="trailer">
+            <h3>Movie Trailer:</h3>
+            <iframe id="trailI" width="640" height="360" frameborder="0" allowfullscreen></iframe>
+        </div>
     </div>
 
-    <div id="trailer">
-        <h3>Movie Trailer:</h3>
-        <iframe id="trailI" width="640" height="360" frameborder="0" allowfullscreen></iframe>
-    </div>
+    <p> Here are actors from {{actors[0][1]}}:</p>
+    <table class="table table-hover">
+        {% for actor in actors  %}
+        <tr>
+            <td> {{actor[2]}} </td>
+            <td> {{actor[3]}} </td>
+            <td> {{actor[4]}} </td>
+            <td> {{actor[5]}} </td>
+            <td> {{actor[6]}} </td>
+        </tr>
+        {% endfor %}
+    </table>
 
-</div>
-<p> Here are actors from {{actors[0][1]}}:</p>
-<table class="table table-hover">
-    {% for actor in actors  %}
-    <tr>
-        <td> {{actor[2]}} </td>
-        <td> {{actor[3]}} </td>
-        <td> {{actor[4]}} </td>
-        <td> {{actor[5]}} </td>
-        <td> {{actor[6]}} </td>
-    </tr>
-    {% endfor %}
-</table>
-<script type="text/javascript">
-    search(actors[0][0], actors[0][1])
-</script>
+    <script src="./js/controller.js" type=text/javascript></script>
+    <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+    <script src="./js/app.js"></script>
+    <script src="https://apis.google.com/js/client.js?onload=init"></script>
+
+    <script type="text/javascript">
+        search(actors[0][0], actors[0][1])
+    </script>
+
 {% endblock %}

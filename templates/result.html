@@ -1,13 +1,17 @@
 {% extends "base.html" %}
+
 {% block content %}
-<p> Here are the movies which satisfy your query:</p>
-<table class="table table-hover">
-    {% for movres in movress  %}
-    <tr>
-        <td id="{{movres[1]}}"><a href='/rendermovie?movie={{movres[1]}}'> {{movres[1]}} </a></td>
-        <td> {{movres[2]}} </td>
-        <td> {{movres[3]}} </td>
-    </tr>
-    {% endfor %}
-</table>
+
+	<p> Here are the movies which satisfy your query:</p>
+
+	<table class="table table-hover">
+	    {% for movres in movress  %}
+	    <tr>
+	        <td id="{{movres[1]}}"><a href='/rendermovie?movie={{movres[1]}}'> {{movres[1]}} </a></td>
+	        <td> {{movres[2]}} </td>
+	        <td> {{movres[3]}} </td>
+	    </tr>
+	    {% endfor %}
+	</table>
+
 {% endblock %}

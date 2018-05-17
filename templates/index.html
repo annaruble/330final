@@ -1,24 +1,36 @@
 {% extends "base.html" %}
 
 {% block content %}
+
+    <h2>Search for movies from a specified country:</h2>
+    <p>* Indicates a required field.</p>
+    <br />
     <form action = "/processform">
-        <label>Search for movies from a specified country:</label>
-        <select type="text" id="country" name="country">
-                {% for country in countries  %}
-                <option value="{{country['country']}}">{{country['country']}}</option>
+        <div class="form-group">
+            <label>Country*: </label>
+            <select type="text" id="country" name="country">
+                    {% for country in countries  %}
+                    <option value="{{country['country']}}">{{country['country']}}</option>
+                    {% endfor %}
+            </select>
+        </div>
+        <div class="form-group">
+            <label>Year Released: </label>
+            <select type="text" id="year" name="year">
+                <option value="None">None</option>
+                {% for year in years  %}
+                <option value="{{year['year']}}">{{year['year']}}</option>
                 {% endfor %}
-        </select>
-        <select type="text" id="year" name="year">
-            <option value="None">None</option>
-            {% for year in years  %}
-            <option value="{{year['year']}}">{{year['year']}}</option>
-            {% endfor %}
-        </select> 
-        <select type="text" id="month" name="month">
-            {% for month in months  %}
-            <option value="{{months[month]}}">{{months[month]}}</option>
-            {% endfor %}
-        </select>
+            </select> 
+        </div>
+        <div class="form-group">
+            <label>Month Released: </label>
+            <select type="text" id="month" name="month">
+                {% for month in months  %}
+                <option value="{{months[month]}}">{{months[month]}}</option>
+                {% endfor %}
+            </select>
+        </div>
         <input type="submit">
     </form>
 
