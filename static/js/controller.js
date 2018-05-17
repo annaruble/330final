@@ -1,14 +1,14 @@
-// let titleIn = document.getElementById("titleInput")
-/* let titleIn = actors[0][1]
+let titleIn = document.getElementById("titleInput")
+let titleIn = actors[0][1]
 let yearIn = document.getElementById("yearInput")
 
 titleIn.addEventListener("keyup", function(event) {
     if (event.keyCode === 13) {
         document.getElementById("enter").click();
     }
-}) */
+})
 
-function search(realTitle, realYear) {
+function search() {
     let config = {};
 
     // let title = document.getElementById("titleInput").value;

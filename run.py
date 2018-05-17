@@ -1,5 +1,7 @@
 from flask import Flask, render_template, request
 from collections import OrderedDict
+from flask_wtf import Form
+from wtforms import StringField, PasswordField
 import records
 
 app = Flask(__name__)
@@ -34,8 +36,8 @@ def procform():
 @app.route('/rendermovie')
 def getMovieInfo():
     moviex = request.args.get("movie")
-    db = records.Database('sqlite:///mydb2.db')
-    res = db.query('select distinct * from moviecast where title = :movie order by n', movie = moviex)
+    db = records.Database('sqlite:///mydb.db')
+    res = db.query("select distinct * from moviecast where title = '" + moviex + "' order by n")
 
 
     return render_template('movie.html',actors = res)
