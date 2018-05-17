@@ -10,8 +10,8 @@
 
     </script>
     
-    <p id="titleInput" value="Chicken Little">Chicken Little<p>
-    <p id="yearInput">2005</p>
+    <p class="hide" id="titleInput">{{actors[0][0]}}<p>
+    <p class="hide" id="yearInput">{{actors[0][1]}}</p>
     <!-- <button class ="hide" onclick="search({{actors[0][2]}}, {{actors[0][1]}})" id ="getinf"></button> -->
     <button class ="hide" onclick="search()" id ="getinf"></button>
 
@@ -39,21 +39,24 @@
             </table>
         </div>
 
-        <div id="trailer">
+        <!-- <div id="trailer">
             <h3>Movie Trailer:</h3>
             <iframe id="trailI" width="640" height="360" frameborder="0" allowfullscreen></iframe>
-        </div>
+        </div> -->
     </div>
  
-    <p> Here are actors from {{actors[0][1]}}:</p>
+    <h4>{{actors[0][0]}} Cast List:</h4>
     <table class="table table-hover">
+        <tr>
+                <th>Actor</th>
+                <th>Title</th>
+                <th>Character</th>
+        </tr>
         {% for actor in actors  %}
         <tr>
             <td> {{actor[2]}} </td>
             <td> {{actor[3]}} </td>
             <td> {{actor[4]}} </td>
-            <td> {{actor[5]}} </td>
-            <td> {{actor[6]}} </td>
         </tr>
         {% endfor %}
     </table>

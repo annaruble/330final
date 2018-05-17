@@ -31,7 +31,27 @@
                 {% endfor %}
             </select>
         </div>
-        <input type="submit">
+        <input type="submit" class="btn btn-primary">
     </form>
+    <br />
+    <div>
+        <div id="display">
+            <button type="button" class="btn btn-secondary" onclick="loadDoc()">About This Application</button>
+            </div>
+            
+            <script>
+            function loadDoc() {
+              var xhttp = new XMLHttpRequest();
+              xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                  document.getElementById("display").innerHTML =
+                  this.responseText;
+                }
+              };
+              xhttp.open("GET", "static/display.txt", true);
+              xhttp.send();
+            }
+            </script>
+    </div>
 
 {% endblock %}

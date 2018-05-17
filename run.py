@@ -37,7 +37,7 @@ def procform():
 def getMovieInfo():
     moviex = request.args.get("movie")
     db = records.Database('sqlite:///moviedb.db')
-    res = db.query("select distinct * from moviecast where title = '" + moviex + "' order by n")
+    res = db.query("select distinct * from moviecast where title = '{}' order by name asc".format(moviex))
 
 
     return render_template('movie.html',actors = res)
