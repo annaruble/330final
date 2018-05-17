@@ -1,5 +1,7 @@
 from flask import Flask, render_template, request
 from collections import OrderedDict
+from flask_wtf import Form
+from wtforms import StringField, PasswordField
 import records
 
 app = Flask(__name__)
