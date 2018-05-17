@@ -1,0 +1,5 @@
+This application utilizes a movie database featuring cast, release date, and title tables. From there,
+users are able to sort by specific parameters which is then queried through a SQLite database. 
+We then also utilize the OMDB API, which allows us to also get the synopsis of each movie.\n
+
+This application is coded through a use of python, flask, javascript, sql, and other web development tools.
