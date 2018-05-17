@@ -8,7 +8,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def hello():
-    db = records.Database('sqlite:///mydb.db')
+    db = records.Database('sqlite:///moviedb.db')
     res = db.query('select distinct country from release_date order by country')
     res2 = db.query('select distinct year from release_date order by year desc')
     
@@ -21,7 +21,7 @@ def procform():
     yearx = request.args.get("year")
     monthx = request.args.get("month")
     res3 = {'Jan':1,'Feb':2,'Mar':3,'Apr':4,'May':5,'June':6,'July':7,'Aug':8,'Sep':9,'Oct':10,'Nov':11,'Dec':12}
-    db = records.Database('sqlite:///mydb.db')
+    db = records.Database('sqlite:///moviedb.db')
     if monthx == "None" and yearx == "None":
         res = db.query('select * from release_date where country = :country', country = countryx)
     elif monthx == "None":
@@ -36,7 +36,7 @@ def procform():
 @app.route('/rendermovie')
 def getMovieInfo():
     moviex = request.args.get("movie")
-    db = records.Database('sqlite:///mydb.db')
+    db = records.Database('sqlite:///moviedb.db')
     res = db.query("select distinct * from moviecast where title = '" + moviex + "' order by n")
 
 

@@ -4,15 +4,16 @@
 
 
     <script type="text/javascript">
-        title = document.getElementById="title"
-        year = document.getElementById="year"
-        search(title, year)
+        $(document).ready(function(){
+            document.getElementById("getinf").click();
+        });
+
     </script>
-
-    <p class="hide" id="title">{{actors[0][1]}}<p>
-    <p class="hide" id="year">{{actors[0][2]}}</p>
-
-    <button onclick="search(title,year)"">Get Trailer</button>
+    
+    <p id="titleInput" value="Chicken Little">Chicken Little<p>
+    <p id="yearInput">2005</p>
+    <!-- <button class ="hide" onclick="search({{actors[0][2]}}, {{actors[0][1]}})" id ="getinf"></button> -->
+    <button class ="hide" onclick="search()" id ="getinf"></button>
 
     <div class="container-fluid">
         <div id="info">

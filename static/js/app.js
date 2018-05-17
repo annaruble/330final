@@ -3,6 +3,7 @@ var trailerId
 
 function getPromo(name){
     // prepare the request
+    console.log(name)
     var request = gapi.client.youtube.search.list({
         part: "snippet",
         type: "video",
@@ -28,7 +29,7 @@ function getPromo(name){
 }
 
 function init() {
-    gapi.client.setApiKey("AIzaSyDy2xbhsGj_IOO3FZPnTlhrsPn1oDK0DjI");
+    gapi.client.setApiKey("AIzaSyC-PnbR92bn-j9lGSFA_ZG5biYt5CHtPT4");
     gapi.client.load("youtube", "v3", function() {
         // yt api is ready
     })
