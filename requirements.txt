@@ -40,7 +40,7 @@ ipython-sql==0.3.6
 ipywidgets==5.2.2
 itsdangerous==0.24
 jdcal==1.2
-Jinja2==2.10
+Jinja2==2.11.3
 jsonschema==2.5.1
 jupyter==1.0.0
 jupyter-client==4.3.0
