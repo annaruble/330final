@@ -125,7 +125,7 @@ unity-scope-openclipart==0.1
 unity-scope-texdoc==0.1
 unity-scope-tomboy==0.1
 unity-scope-yelp==0.1
-urllib3==1.13.1
+urllib3==1.26.5
 usb-creator==0.3.0
 user-agents==1.0.1
 virtualenv==15.0.1
