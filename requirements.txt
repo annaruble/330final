@@ -49,7 +49,7 @@ jupyter-core==4.1.1
 language-selector==0.1
 LibAppArmor==2.10.95
 louis==2.6.4
-lxml==3.5.0
+lxml==4.6.5
 MarkupSafe==1.0
 matplotlib==1.5.1
 mistune==0.7.3
