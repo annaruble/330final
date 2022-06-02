@@ -28,7 +28,7 @@ Flask-Bootstrap==3.3.7.1
 Flask-WTF==0.14.2
 funcsigs==0.4
 Genshi==0.7
-html5lib==0.999
+html5lib==0.99999999
 httplib2==0.9.1
 idna==2.0
 imagesize==0.7.1
